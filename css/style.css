@@ -1,0 +1,293 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+body {
+  background: #8DBBC8;
+  font-family: 'Open Sans', sans-serif;
+}
+body input {
+  font-family: 'Open Sans', sans-serif;
+}
+body .clearfix {
+  clear: both;
+}
+body .content {
+  width: 500px;
+  margin: 20px auto;
+  background: #F3F3F3;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 grey;
+  padding: 10px 40px;
+  font-size: 16px;
+}
+body .content .lang {
+  float: right;
+  margin-top: 10px;
+}
+body .content .lang div {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-image: url(../img/lang.png);
+  cursor: pointer;
+}
+body .content .lang .ru {
+  background-position: 0px 0px;
+}
+body .content .lang .eng {
+  background-position: 32px 0px;
+}
+body .content.tabs h2 {
+  color: #8DBBC8;
+  cursor: pointer;
+}
+body .content.tabs h2:hover {
+  text-decoration: underline;
+}
+body .content.tabs h2.active {
+  color: black;
+  cursor: default;
+}
+body .content.tabs h2.active:hover {
+  text-decoration: none;
+}
+body .content.tabs form {
+  display: none;
+}
+body .content.tabs form.active {
+  display: block;
+}
+body .content.profile p label:first-child {
+  width: 190px;
+}
+body .content h2 {
+  margin: 10px 40px 20px 0px;
+  float: left;
+}
+body .content hr {
+  border: none;
+  border-bottom: 1px solid #CDD1DA;
+}
+body .content p.description {
+  font-size: 12px;
+}
+body .content p.submit-error {
+  color: red;
+  position: relative;
+  -webkit-animation: showErr 1s;
+  animation: showErr 1s;
+}
+body .content p.error .icon {
+  visibility: visible;
+}
+body .content p.error-txt .icon {
+  visibility: visible;
+}
+body .content p.error-txt .error-desc {
+  visibility: visible;
+}
+body .content p .error-desc {
+  font-size: 12px;
+  line-height: 12px;
+  display: inline-block;
+  width: 85px;
+  vertical-align: middle;
+  text-align: center;
+  visibility: hidden;
+}
+body .content p .icon {
+  width: 32px;
+  height: 32px;
+  background: url(../img/error.png);
+  display: inline-block;
+  visibility: hidden;
+  top: 10px;
+  position: relative;
+}
+body .content p > label:first-child {
+  width: 160px;
+  display: inline-block;
+}
+body .content p input[type=text],
+body .content p input[type=password],
+body .content p input[type=email],
+body .content p input[type=date] {
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 1px 0px grey;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  width: 180px;
+}
+body .content p input[type=text]:focus,
+body .content p input[type=password]:focus,
+body .content p input[type=email]:focus,
+body .content p input[type=date]:focus {
+  outline: 0;
+  background-color: #DFE8EA;
+  border: none;
+}
+body .content p input[type=checkbox] {
+  visibility: hidden;
+  width: 0;
+  margin: 0;
+}
+body .content p input[type=checkbox]:checked + label:before {
+  background-color: #8EBD5D;
+}
+body .content p input[type=checkbox]:checked + label:after {
+  left: 21px;
+}
+body .content p input[type=checkbox] + label {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 50px;
+}
+body .content p input[type=checkbox] + label:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-right: 10px;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #CDD1DA;
+  box-shadow: inset 0px 1px 1px 0px grey;
+}
+body .content p input[type=checkbox] + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: white;
+  transition: left 0.1s ease;
+}
+body .content p input[type=radio] {
+  visibility: hidden;
+  width: 0;
+  margin: 0;
+}
+body .content p input[type=radio]:checked + label:after {
+  opacity: 1;
+}
+body .content p input[type=radio] + label {
+  position: relative;
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 14px;
+  padding-left: 30px;
+  line-height: 22px;
+  display: inline-block;
+}
+body .content p input[type=radio] + label:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid #CDD1DA;
+}
+body .content p input[type=radio] + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 9px;
+  background-color: #8EBD5D;
+  box-shadow: inset 0px 1px 1px 0px grey;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+body .content p .btn {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #8DBBC8;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+}
+body .content p .btn:focus,
+body .content p .btn:active {
+  outline: 0;
+}
+body .content p .btn:active {
+  box-shadow: inset 0px 1px 1px 0px grey;
+}
+body .content p .loadfile {
+  position: relative;
+}
+body .content p #avatar-img {
+  max-width: 150px;
+  max-height: 150px;
+}
+body .content p.ava {
+  display: table;
+}
+body .content p.ava input[type=file] {
+  display: none;
+}
+body .content p.ava #avatar-img {
+  margin-right: 40px;
+}
+body .content p.ava #avatar-img[src=''] {
+  display: none;
+}
+body .content p.ava > * {
+  vertical-align: middle;
+}
+@-webkit-keyframes showErr {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 20px;
+  }
+  60% {
+    left: -20px;
+  }
+  75% {
+    left: 10px;
+  }
+  90% {
+    left: -5px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes showErr {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 20px;
+  }
+  60% {
+    left: -20px;
+  }
+  75% {
+    left: 10px;
+  }
+  90% {
+    left: -5px;
+  }
+  100% {
+    left: 0px;
+  }
+}

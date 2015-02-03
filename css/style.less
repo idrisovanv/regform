@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+body {
+  background: #8DBBC8;
+  font-family: 'Open Sans', sans-serif;
+  input {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .content {
+    width: 500px;
+    margin: 20px auto;
+    background: #F3F3F3;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 grey;
+    padding: 10px 40px;
+    font-size: 16px;
+
+    .lang {
+      float: right;
+      margin-top: 10px;
+      div {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        background-image: url(../img/lang.png);
+        cursor: pointer;
+      }
+      .ru {
+        background-position: 0px 0px;
+      }
+      .eng {
+        background-position: 32px 0px;
+      }
+    }
+
+    &.tabs {
+      h2 {
+        color: #8DBBC8;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+        &.active {
+          color: black;
+          cursor: default;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      form {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+
+    &.profile p label:first-child {
+      width: 190px;
+    }
+    h2 {
+      margin: 10px 40px 20px 0px;
+      float: left;
+    }
+
+    hr {
+      border: none;
+      border-bottom: 1px solid #CDD1DA;
+    }
+    p {
+      &.description {
+        font-size: 12px;
+      }
+      &.submit-error {
+        color: red;
+        position: relative;
+        -webkit-animation: showErr 1s;
+        animation: showErr 1s;
+      }
+      &.error {
+        .icon {
+          visibility: visible;
+        }
+      }
+      &.error-txt {
+        .icon {
+          visibility: visible;
+        }
+        .error-desc {
+          visibility: visible;
+        }
+      }
+      .error-desc {
+        font-size: 12px;
+        line-height: 12px;
+        display: inline-block;
+        width: 85px;
+        vertical-align: middle;
+        text-align: center;
+        visibility: hidden;
+      }
+
+      .icon {
+        width: 32px;
+        height: 32px;
+        background: url(../img/error.png);
+        display: inline-block;
+        visibility: hidden;
+        top: 10px;
+        position: relative;
+      }
+      > label:first-child {
+        width: 160px;
+        display: inline-block;
+      }
+      input[type=text], input[type=password], input[type=email], input[type=date] {
+        border-radius: 5px;
+        box-shadow: inset 0px 1px 1px 0px grey;
+        border: none;
+        font-size: 16px;
+        padding: 10px;
+        width: 180px;
+        &:focus {
+          outline: 0;
+          background-color: #DFE8EA;
+          border: none;
+        }
+      }
+
+      input[type=checkbox] {
+        visibility: hidden;
+        width: 0;
+        margin: 0;
+        &:checked {
+          + label {
+            &:before {
+              background-color: #8EBD5D;
+            }
+            &:after {
+              left: 21px;
+            }
+          }
+        }
+        + label {
+          position: relative;
+          cursor: pointer;
+          font-size: 14px;
+          padding-left: 50px;
+          &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin-right: 10px;
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #CDD1DA;
+            box-shadow: inset 0px 1px 1px 0px grey;
+          }
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            width: 18px;
+            height: 18px;
+            border-radius: 9px;
+            background-color: white;
+            transition: left 0.1s ease;
+          }
+
+        }
+      }
+
+      input[type=radio] {
+        visibility: hidden;
+        width: 0;
+        margin: 0;
+        &:checked {
+          + label {
+            &:after {
+              opacity: 1;
+            }
+          }
+        }
+        + label {
+          position: relative;
+          cursor: pointer;
+          margin-right: 20px;
+          font-size: 14px;
+          padding-left: 30px;
+          line-height: 22px;
+          display: inline-block;
+
+          &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid #CDD1DA;
+
+          }
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 16px;
+            height: 16px;
+            border-radius: 9px;
+            background-color: #8EBD5D;
+            box-shadow: inset 0px 1px 1px 0px grey;
+            opacity: 0;
+            transition: opacity 0.1s ease;
+          }
+
+        }
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #8DBBC8;
+        cursor: pointer;
+        border: none;
+        font-size: 14px;
+        &:focus, &:active {
+          outline: 0;
+        }
+        &:active {
+          box-shadow: inset 0px 1px 1px 0px grey;
+        }
+      }
+
+      .loadfile {
+        position: relative;
+      }
+      #avatar-img {
+        max-width: 150px;
+        max-height: 150px;
+      }
+
+      &.ava {
+        display: table;
+        input[type=file] {
+          display: none;
+
+        }
+        #avatar-img {
+          margin-right: 40px;
+          &[src=''] {
+            display: none;
+          }
+        }
+        > * {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes showErr {
+  0% { left: 0; }
+  30% { left: 20px; }
+  60% { left: -20px; }
+  75% { left: 10px; }
+  90% { left: -5px; }
+  100% { left: 0px; }
+}
+
+@keyframes showErr {
+  0% { left: 0; }
+  30% { left: 20px; }
+  60% { left: -20px; }
+  75% { left: 10px; }
+  90% { left: -5px; }
+  100% { left: 0px; }
+}
